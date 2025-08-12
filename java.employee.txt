@@ -1,0 +1,151 @@
+import java.util.scanner;
+class Employee
+{
+string empName,empID,adddress,mailID,mobileno;
+double basic Pay;
+
+scanner sc = new scanner(system.in);
+void read details()
+{
+Sytem.out.println("enter the emloyee name:");
+empName= sc.nextline();
+Sytem.out.println("enter the emloyee id:");
+empID= sc.nextline();
+Sytem.out.println("enter the emloyee address:");
+empaddress= sc.nextline();
+Sytem.out.println("enter the emloyee email ID :");
+empmailID= sc.nextline();
+Sytem.out.println("enter the emloyee mobile no:");
+empmobileno = sc.nextline();
+Sytem.out.println("enter the basicPay:");
+double basicPay= sc.nextline();
+void display details()
+{
+system.out.println("/n ---employee name---");
+system.out.println("name:"+empName);
+system.out.println("id:"+empID);
+system.out.println("address:"+empaddress);
+system.out.println("emailid:"+empemailID);
+system.out.println("mobile no:"+empmobileno);
+system.out.println("basicpay:"+basicPay);
+}
+}
+class programmer extend Employee
+{
+void generate Payslip()
+{
+double da = basicPay*97/100;
+double hra = basicPay*10/100;
+double pf= basicPay*12/100;
+double staffclub = basicPay*1/100;
+double gross = basicPay+da+hra;
+double net = gross-(pf+staffclub);
+displaydetails();
+Sytem.out.println("designer:programmer");
+Sytem.out.println("da:"+da);
+Sytem.out.println("hra:"+hra);
+Sytem.out.println("pf:"+pf);
+Sytem.out.println("staffclub:"+staffclub);
+Sytem.out.println("gross:"+gross);
+Sytem.out.println("net:"+net);
+}
+}
+class assistantprofessor extend Employee
+{
+void generate Payslip()
+{
+double da = basicPay*110/100;
+double hra = basicPay*20/100;
+double pf= basicPay*12/100;
+double staffclub = basicPay*5/100;
+double gross = basicPay+da+hra;
+double net = gross-(pf+staffclub);
+displaydetails();
+Sytem.out.println("designer:associateprofessor");
+Sytem.out.println("da:"+da);
+Sytem.out.println("hra:"+hra);
+Sytem.out.println("pf:"+pf);
+Sytem.out.println("staffclub:"+staffclub);
+Sytem.out.println("gross:"+gross);
+Sytem.out.println("net:"+net);
+}
+}
+class associateprofessor  extend Employee
+{
+void generate Payslip()
+{
+double da = basicPay*130/100;
+double hra = basicPay*20/100;
+double pf= basicPay*12/100;
+double staffclub = basicPay*10/100;
+double gross = basicPay+da+hra;
+double net = gross-(pf+staffclub);
+displaydetails();
+Sytem.out.println("designer: associateprofessor ");
+Sytem.out.println("da:"+da);
+Sytem.out.println("hra:"+hra);
+Sytem.out.println("pf:"+pf);
+Sytem.out.println("staffclub:"+staffclub);
+Sytem.out.println("gross:"+gross);
+Sytem.out.println("net:"+net);
+}
+}
+class professor  extend Employee
+{
+void generate Payslip()
+{
+double da = basicPay*140/100;
+double hra = basicPay*40/100;
+double pf= basicPay*12/100;
+double staffclub = basicPay*15/100;
+double gross = basicPay+da+hra;
+double net = gross-(pf+staffclub);
+displaydetails();
+Sytem.out.println("designer:professor");
+Sytem.out.println("da:"+da);
+Sytem.out.println("hra:"+hra);
+Sytem.out.println("pf:"+pf);
+Sytem.out.println("staffclub:"+staffclub);
+Sytem.out.println("gross:"+gross);
+Sytem.out.println("net:"+net);
+}
+}
+public class EmployeepaySlip
+{
+public static void main(string args[])
+{
+scanner sc = new scanner(system.in);
+system.out.println("enter Employee designer:\n1,progarmmer:\n2,assistantprofessor:\n3,associateprofessor:\n4,professor:");
+int choice = sc.nextint();
+sc.nextLine();
+switch(choice)
+{
+case 1:
+programmer p = new programmer();
+p.readdetails();
+p.generatepaySlip();
+break;
+
+case 2:
+assistantprofessor ap = new assistantprofessor ();
+ap.readdetails();
+ap.generatepaySlip();
+break;
+
+case 3:
+associateprofessor app = new associateprofessor ();
+app.readdetails();
+app.generatepaySlip();
+break;
+
+case 4:
+professor prof =new professor ();
+prof.readdetails();
+prof.generatepaySlip();
+break;
+
+default:
+system.out.printtln("invalid choice");
+}
+sc.close();
+}

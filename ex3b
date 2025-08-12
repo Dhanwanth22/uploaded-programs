@@ -1,0 +1,63 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class Stack:
+    def __init__(self):
+        self.top = None
+
+    def push(self, value):
+        # Create a new node with the given value
+        new_node = Node(value)
+        # Point the new node to the current top node
+        new_node.next = self.top
+        # Update the top of the stack to be the new node
+        self.top = new_node
+        print(f"'{value}' pushed onto the stack.")
+
+    def pop(self):
+        if self.top is None:
+            print("Stack is Empty!!!")
+            return
+        # Remove the top node
+        temp = self.top
+        self.top = self.top.next
+        print(f"'{temp.data}' popped from the stack.")
+        del temp  # Free up the memory of the popped node
+
+    def display(self):
+        if self.top is None:
+            print("Stack is Empty!!!")
+            return
+        temp = self.top
+        print("Stack contents:")
+        while temp is not None:
+            print(f"{temp.data} -> ", end="")
+            temp = temp.next
+        print("NULL")
+
+# Main Program
+stack = Stack()
+
+while True:
+    print("\n--- Stack Operations ---")
+    print("1. Push")
+    print("2. Pop")
+    print("3. Display")
+    print("4. Exit")
+
+    choice = input("Enter your choice (1-4): ")
+
+    if choice == '1':
+        value = input("Enter the book title to push: ")
+        stack.push(value)
+    elif choice == '2':
+        stack.pop()
+    elif choice == '3':
+        stack.display()
+    elif choice == '4':
+        print("Exiting...")
+        break
+    else:
+        print("Invalid choice! Please enter 1 to 4.")

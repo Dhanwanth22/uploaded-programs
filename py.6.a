@@ -1,0 +1,27 @@
+OPERATORS=set(['+','-','*','/','(',')','^'])
+PRIORITY={'+':1,'-':1,'*':2,'^':3}
+def infix__to__postfix(expression):
+    stack=[]
+    optput=''
+    for ch in expression:
+        if ch not in op:
+            output+= ch
+        elif ch =='(':
+            stack.append('(')
+        elif ch ==')':
+            while stack and stack[-1]!='(':
+                output+= stack.pop()
+            stack.pop()
+        else:
+            while stack and stack[-1]!='('and PR[ch]<=PR(stack[-1]):
+                output+= stack.pop()
+            stack.append(ch)
+        while stack:
+           output+= stack.pop()
+        return output
+exp=input('Enter infix expression')
+print('infix expression:'.exp)
+print('postfix expression:'.i_to_p(exp))
+           
+                
+            
